@@ -177,8 +177,8 @@ def handDetect(candidate, subset, oriImg):
             distanceElbowShoulder = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
             width = 1.5 * max(distanceWristElbow, 0.9 * distanceElbowShoulder)
             # x-y refers to the center --> offset to topLeft point
-            handRectangle.x -= handRectangle.width / 2.f;
-            handRectangle.y -= handRectangle.height / 2.f;
+            # handRectangle.x -= handRectangle.width / 2.f;
+            # handRectangle.y -= handRectangle.height / 2.f;
             x -= width / 2
             y -= width / 2  # width = height
             # overflow the image
