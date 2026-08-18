@@ -166,12 +166,13 @@ def handDetect(candidate, subset, oriImg):
             hands.append([x1, y1, x2, y2, x3, y3, False])
 
         for x1, y1, x2, y2, x3, y3, is_left in hands:
-            # pos_hand = pos_wrist + ratio * (pos_wrist - pos_elbox) = (1 + ratio) * pos_wrist - ratio * pos_elbox
-            # handRectangle.x = posePtr[wrist*3] + ratioWristElbow * (posePtr[wrist*3] - posePtr[elbow*3]);
-            # handRectangle.y = posePtr[wrist*3+1] + ratioWristElbow * (posePtr[wrist*3+1] - posePtr[elbow*3+1]);
-            # const auto distanceWristElbow = getDistance(poseKeypoints, person, wrist, elbow);
-            # const auto distanceElbowShoulder = getDistance(poseKeypoints, person, elbow, shoulder);
-            # handRectangle.width = 1.5f * fastMax(distanceWristElbow, 0.9f * distanceElbowShoulder);
+            pos_hand = pos_wrist + ratio * (pos_wrist - pos_elbox) = (1 + ratio) * pos_wrist - ratio * pos_elbox
+            handRectangle.x = posePtr[wrist*3] + ratioWristElbow * (posePtr[wrist*3] - posePtr[elbow*3]);
+            handRectangle.y = posePtr[wrist*3+1] + ratioWristElbow * (posePtr[wrist*3+1] - posePtr[elbow*3+1]);
+            const auto distanceWristElbow = getDistance(poseKeypoints, person, wrist, elbow);
+            const auto distanceElbowShoulder = getDistance(poseKeypoints, person, elbow, shoulder);
+            handRectangle.width = 1.5f * fastMax(distanceWristElbow, 0.9f * distanceElbowShoulder);
+            
             x = x3 + ratioWristElbow * (x3 - x2)
             y = y3 + ratioWristElbow * (y3 - y2)
             distanceWristElbow = math.sqrt((x3 - x2) ** 2 + (y3 - y2) ** 2)
