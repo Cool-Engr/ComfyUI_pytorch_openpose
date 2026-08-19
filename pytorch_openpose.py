@@ -265,13 +265,13 @@ class bodypose_model(nn.Module):
                         ('conv5_5_CPM_L1', [512, 38, 1, 1, 0])
                     ])
 
-        # block1_2 = OrderedDict([
-        #                 ('conv5_1_CPM_L2', [128, 128, 3, 1, 1]),
-        #                 ('conv5_2_CPM_L2', [128, 128, 3, 1, 1]),
-        #                 ('conv5_3_CPM_L2', [128, 128, 3, 1, 1]),
-        #                 ('conv5_4_CPM_L2', [128, 512, 1, 1, 0]),
-        #                 ('conv5_5_CPM_L2', [512, 19, 1, 1, 0])
-        #             ])
+        block1_2 = OrderedDict([
+                        ('conv5_1_CPM_L2', [128, 128, 3, 1, 1]),
+                        ('conv5_2_CPM_L2', [128, 128, 3, 1, 1]),
+                        ('conv5_3_CPM_L2', [128, 128, 3, 1, 1]),
+                        ('conv5_4_CPM_L2', [128, 512, 1, 1, 0]),
+                        ('conv5_5_CPM_L2', [512, 19, 1, 1, 0])
+                    ])
         blocks['block1_1'] = block1_1
         blocks['block1_2'] = block1_2
 
