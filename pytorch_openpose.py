@@ -703,8 +703,8 @@ def generate_pose(img, body_estimation, hand_estimation):
     canvas_black = draw_bodypose(canvas_black, candidate, subset)
     canvas_black = draw_handpose(canvas_black, all_hand_peaks)
     
-    imgop = np.array(canvas_black[:, :, [2, 1, 0]])
-    imgop = cv2.cvtColor(imgop, cv2.COLOR_BGR2RGB)
+    # imgop = np.array(canvas_black[:, :, [2, 1, 0]])
+    # imgop = cv2.cvtColor(imgop, cv2.COLOR_BGR2RGB)
     
     return imgop, centroid
 
